@@ -1,0 +1,11 @@
+.contents{
+    height: 100vh;
+}
+img{
+    width: 400px;
+    height: 400px;
+}
+.inner-content{
+    padding-top: 100px;
+    
+}

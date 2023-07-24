@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/blog.css">
+{% endblock %}
+
+{% block content %}
+<div class="contents">
+    <div class="inner-content">
+        {% if data %}
+            {% for data in data %}
+                <p>Title: {{data.title}}</p>
+                <p>{{data.Content}}</p>
+                <p>Published at: {{data.publication_date}}</p>
+                {% if data.featured_image %}
+                    <img src="{{data.featured_image.url}}">
+                {% endif %}
+                <hr>
+            {% endfor %}
+            {% else %}
+                <p>Sorry no blogs to display</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
