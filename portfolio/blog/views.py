@@ -7,3 +7,6 @@ def blog(request):
         'data' : BlogData.objects.all()
     }
     return render(request,'blog.html',content)
+
+def test_data(request):
+    return render(request, 'test.html')

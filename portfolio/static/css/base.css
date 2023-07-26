@@ -47,7 +47,7 @@ header nav ul li a:hover{
 #nav-but{
     background-color: transparent;
     border-radius: 7px;
-    width: 80px;
+    width: 100px;
 }
 #nav-but a{
     text-decoration: none;
