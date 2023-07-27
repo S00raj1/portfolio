@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from . models import *
 
 # Create your views here.
 
@@ -24,4 +26,15 @@ def contact(request):
     content = {
         'title' : 'Contact'
     }
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+        msg = Contact.objects.create(name=name, email=email, message=message)
+        msg.save()
+        messages.success(request,'You will be contacted soon..')
+        return redirect('contact')
     return render(request, 'contact.html', content)
+
+
+

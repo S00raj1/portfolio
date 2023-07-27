@@ -5,7 +5,73 @@
 {% endblock %}
 
 {% block content %}
+<style>
+    .inner1 li,.expertise-p{
+        text-align: center;
+    }
+    .inner1 li{
+        list-style: none;
+    }
+    .img{
+        display: flex;
+        justify-content: center;
+    }
+    .img img{
+        height: 100px;
+        width: 100px;
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+    .inner1:hover{
+        box-shadow: 0.5px 0.5px 0.5px 0.5px #d0d1d6;
+    }
+</style>
     <div class="content" style="margin-top: 100px;">
-
+        <div class="expertise" style="height: 800px;">
+            <p class="expertise-p" style="font-size: 40px; margin: 70px; margin-top: 120px;">Services</p>
+            <div class="inner-expertise" style="margin: 50px;">
+                <div class="inside" style="display: flex; justify-content: center;">
+                       <div class="inner1" style="background-color: #e1e7f1; width: 500px; height: 300px; margin: 0.5px; ">
+                        <div class="img">
+                        <img src="/static/images/coding.png" alt="">    
+                        </div>
+                        <p class="expertise-p">Proficiency in one or more <br>
+                            backend programming languages, <br>
+                            such as: Python (Django), JavaScript</p>
+                        </div>
+                       <div class="inner1" style="background-color: #e1e7f1; width: 500px; height: 300px; margin: 0.5px;">
+                        <div class="img">
+                        <img src="/static/images/frame.png" alt="">                                                  
+                        </div>
+                        <p class="expertise-p">Strong understanding and experience <br>
+                            with backend frameworks that facilitate <br>
+                            web application development, handling HTTP requests,<br>
+                            routing, and data manipulation.</p>
+                        </div>
+                </div>
+                <div class="inside" style="display: flex; justify-content: center;">
+                       <div class="inner1" style="background-color: #e1e7f1; width: 500px; height: 300px; margin: 0.5px;">
+                        <div class="img">
+                        <img src="/static/images/db.png" alt="">          
+                        </div>
+                        <p class="expertise-p">Knowledge of relational databases <br>
+                           (e.g., MySQL, PostgreSQL) and <br>
+                            NoSQL databases (e.g., MongoDB),<br>
+                            including how to interact with them,<br>
+                            design schemas, and optimize queries.</p>
+                        </div>
+                       <div class="inner1" style="background-color: #e1e7f1; width: 500px; height: 300px; margin: 0.5px;">
+                        <div class="img">
+                        <img src="/static/images/api.png" alt="">          
+                        </div>
+                        <p class="expertise-p">Creating and consuming APIs <br>
+                            (Application Programming Interfaces) <br>
+                            to enable communication between <br>
+                            the frontend and backend systems <br>
+                            or between different services.</p>
+                        </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

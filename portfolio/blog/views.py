@@ -4,9 +4,10 @@ from .models import *
 def blog(request):
     content = {
         'title':'blog',
-        'data' : BlogData.objects.all()
+        'data' : BlogData.objects.all(),
+        'category' : Category.objects.all(),
     }
     return render(request,'blog.html',content)
 
-def test_data(request):
+def test(request):
     return render(request, 'test.html')

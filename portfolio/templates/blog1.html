@@ -63,6 +63,57 @@ body {
 .post-category {
   color: #777;
 }
+.see-more-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .full-content {
+    display: none;
+  }
+</style>
+<div class="contents">
+    <main class="main">
+      {% for category in category %}
+        <div class="category-section">
+          <h2><b>Category: {{ category.name }}</b></h2>
+          <div class="blog-data">
+            {% for data in data %}
+              {% if data.category.name == category.name %}
+                <div class="inner-div">
+                  {% if data.featured_image %}
+                    <img src="{{ data.featured_image.url }}" alt="Featured Image" class="featured-image">
+                  {% endif %}
+                  <h2 class="post-title">{{ data.title }}</h2>
+                  <p class="post-content">{{ data.Content }}</p>
+                  <p class="post-date">{{ data.publication_date }}</p>
+                </div>
+                <hr>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </main>
+  </div>
+  
+{% endblock %}
+
+{% extends 'base.html' %}
+
+{% block css %}
+<!-- <link rel="stylesheet" href="/static/css/blog.css"> -->
+{% endblock %}
+
+{% block content %}
+<style>
+  /* Your existing styles */
+
+  /* See More button styles */
   .see-more-button {
     display: inline-block;
     background-color: #007bff;
@@ -89,9 +140,9 @@ body {
                   <img src="{{ data.featured_image.url }}" alt="Featured Image" class="featured-image">
                 {% endif %}
                 <h2 class="post-title">{{ data.title }}</h2>
-                <p class="post-content">{{ data.Content | truncatewords:30 }}</p>
+                <p class="post-content">{{ data.Content | truncatewords: 30 }}</p> {# Display a truncated version of the content #}
                 <p class="post-date">{{ data.publication_date }}</p>
-                <div class="full-content">{{ data.Content }}</div> 
+                <div class="full-content">{{ data.Content }}</div> {# Hidden div containing the full content #}
                 <button class="see-more-button">See More</button>
               </div>
               <hr>

@@ -22,6 +22,7 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  margin-bottom: 50px;
 
 }
 .container1{
@@ -30,7 +31,7 @@ body {
     padding: 20px;
     margin-bottom: 20px;
     margin-top: 100px;
-    font-size: 25px;
+    font-size: 20px;
     color: #2d4575;
 }
 .container1 span{
@@ -132,6 +133,13 @@ textarea {
             <div class="form-group">
                 <button class="btn" type="submit">Submit</button>
             </div>
+            {% if messages %}
+              <ul class="messages">
+                  {% for message in messages %}
+                     <p style="color: green;">{{ message }}</p>
+                  {% endfor %}
+              </ul>
+            {% endif %}
         </form>
     </div>
     <div class="container1">
@@ -151,9 +159,9 @@ textarea {
                 call
             </span>
             <div class="inner-cntn">
-                <p>9819042017</p>
+                <p>981904xxxx</p>
                 <hr>
-                <p>9807038806</p>
+                <p>980703xxxx</p>
                 <hr>
             </div>
         </div>
@@ -168,7 +176,7 @@ textarea {
         </div>
     </div>
 </div>
-<div class="content">
+<div class="content" style="margin-top: 100px;">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.854957905181!2d85.33179489999999!3d27.690877399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19db58fb097b%3A0x2215519fd8a68ce2!2sNobel%20Academy%2CNew%20Baneshwor!5e0!3m2!1sen!2snp!4v1690343872965!5m2!1sen!2snp"  style="border:0; width: 100vw; height: 400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 {% endblock %}
